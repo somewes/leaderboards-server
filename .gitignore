@@ -4,3 +4,4 @@
 .DS_Store
 /srllb.sqlite3
 .idea
+.coverage
