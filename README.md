@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/speedrunslive/srllb.png)](https://travis-ci.org/speedrunslive/srllb)
 # SRL Leaderboards
 
 This is a Django project with a single `leaderboards` app. Essentially everything related to the leaderboards should be kept within the `leaderboards` subdirectory. This will be added into rainbowism's main SRL repository before launch.
