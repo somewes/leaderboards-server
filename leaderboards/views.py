@@ -1,16 +1,11 @@
 from __future__ import unicode_literals
-import json
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.views.decorators.http import require_POST
-from rest_framework import mixins, status, viewsets
+from rest_framework import status, viewsets
 from rest_framework.views import APIView
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from leaderboards.serializers import UserSerializer, GameSerializer, SpeedrunSerializer, PlatformSerializer
-from leaderboards.models import Game, Speedrun, Tag, TagValue, Platform, Filter
+from leaderboards.models import Game, Speedrun, Platform
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -50,7 +45,7 @@ class LoginViewSet(APIView):
     API endpoint for logging in
     """
     def post(self, request, format=None):
-        if request.DATA.has_key('username') and request.DATA.has_key('password'):
+        if 'username' in request.DATA and 'password' in request.DATA:
             username, password = (request.DATA['username'], request.DATA['password'])
             user = authenticate(username=username, password=password)
             if user is not None:
