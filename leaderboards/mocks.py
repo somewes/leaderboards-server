@@ -1,5 +1,5 @@
 # fake data to get started without anything in the db
-from leaderboards.models import Game, User, Tag, Speedrun
+from leaderboards.models import Game, User, Speedrun
 
 game = Game(title="Ocarina of Time")
 

@@ -54,11 +54,11 @@ class Speedrun(models.Model):
 
     @property
     def hours(self):
-        return (self.time / 1000) / 3600 # seconds in an hour
+        return (self.time / 1000) / 3600  # seconds in an hour
 
     @property
     def minutes(self):
-        return ((self.time / 1000) % 3600) / 60 # seconds in a minute
+        return ((self.time / 1000) % 3600) / 60  # seconds in a minute
 
     @property
     def seconds(self):
