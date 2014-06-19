@@ -15,9 +15,8 @@ BASE_DIR = path.dirname(path.dirname(path.realpath(__file__)))
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': BASE_DIR + '/srllb.sqlite3',    # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR + '/srllb.sqlite3',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -83,7 +82,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -93,7 +92,7 @@ SECRET_KEY = '&to7ecel#f@l^s$!(&n5l+p@qmq%az1wa_@5+n_rorhfpzqv*+'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -169,8 +168,7 @@ TASTYPIE_DEFAULT_FORMATS = ['json']
 # APPEND_SLASH = False
 
 REST_FRAMEWORK = {
-    'DEFAULT_MODEL_SERIALIZER_CLASS':
-        'rest_framework.serializers.HyperlinkedModelSerializer',
+    'DEFAULT_MODEL_SERIALIZER_CLASS': 'rest_framework.serializers.HyperlinkedModelSerializer',
     # 'DEFAULT_PERMISSION_CLASSES': (
     #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     # ),

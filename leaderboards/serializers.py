@@ -20,9 +20,8 @@ class ModelWriteFlatSerializer(serializers.ModelSerializer):
         """
         super(ModelWriteFlatSerializer, self).field_from_native(data, files, field_name, into)
         list_field_name = field_name + '[]'
-        if data.has_key(list_field_name):
-            into[field_name] = map(lambda pk: self.from_native(pk),
-                data.getlist(list_field_name))
+        if list_field_name in data:
+            into[field_name] = map(lambda pk: self.from_native(pk), data.getlist(list_field_name))
 
 
 class UserSerializer(ModelWriteFlatSerializer):
@@ -39,7 +38,7 @@ class PlatformSerializer(ModelWriteFlatSerializer):
 
 class TagValueSerializer(ModelWriteFlatSerializer):
     tag = serializers.PrimaryKeyRelatedField(required=True)
-    
+
     class Meta:
         model = TagValue
         fields = ('id', 'name', 'description', 'tag')
