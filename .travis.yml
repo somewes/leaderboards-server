@@ -14,4 +14,3 @@ before_script:
   - psql -c 'CREATE DATABASE srllb;' -U postgres
 script:
   - coverage run --source='leaderboards' --branch --omit='leaderboards/migrations/*' manage.py test leaderboards
-  - coverage report --fail-under=100 --show-missing
