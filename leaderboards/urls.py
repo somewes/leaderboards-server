@@ -1,5 +1,4 @@
-from django.conf.urls import patterns, url
-from django.conf.urls.defaults import include
+from django.conf.urls import include, patterns, url
 from rest_framework import routers
 from leaderboards import views
 
